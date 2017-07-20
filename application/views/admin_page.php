@@ -1,33 +1,14 @@
+<?php
+	$session_data = $this->session->userdata('logged_in');
+?>
 <html>
-	<?php
-		if (isset($this->session->userdata['logged_in'])) {
-			$username = ($this->session->userdata['logged_in']['username']);
-			$email = ($this->session->userdata['logged_in']['email']);
-		} else {
-		header("location: login");
-		}
-	?>
 	<head>
 		<title>Admin Page</title>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/admin/css/AdminLTE.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/admin/css/ionicons.min.css">
 	</head>
 	<body>
-		<div id="profile">
-			<?php
-				echo "Hello <b id='welcome'><i>" . $username . "</i> !</b>";
-				echo "<br/>";
-				echo "<br/>";
-				echo "Welcome to Admin Page";
-				echo "<br/>";
-				echo "<br/>";
-				echo "Your Username is " . $username;
-				echo "<br/>";
-				echo "Your Email is " . $email;
-				echo "<br/>";
-			?>
-			<b id="logout"><a href="logout">Logout</a></b>
-		</div>
-		<br/>
+		<b id="logout"><a href="logout">Logout</a></b>
 	</body>
 </html>
